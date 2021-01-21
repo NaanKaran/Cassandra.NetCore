@@ -1,1 +1,1 @@
-# Cassandra.NetCore
+# Cassandra.NetCore.ORM
