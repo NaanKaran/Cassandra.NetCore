@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cassandra.NetCore.ORM</id>
+    <version>1.0.2</version>
+    <authors>Karunakaran R</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/NaanKaran/Cassandra.NetCore.ORM</projectUrl>
+    <description>Package Description</description>
+    <repository url="https://github.com/NaanKaran/Cassandra.NetCore.ORM" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="CassandraCSharpDriver" version="3.16.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\bin\Release\netcoreapp3.1\Cassandra.NetCore.ORM.dll" target="lib\netcoreapp3.1\Cassandra.NetCore.ORM.dll" />
+    <file src="D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\licenses\LICENSE.txt" target="LICENSE.txt" />
+  </files>
+</package>

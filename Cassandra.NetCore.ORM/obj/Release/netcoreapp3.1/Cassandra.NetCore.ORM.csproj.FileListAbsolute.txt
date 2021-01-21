@@ -1,0 +1,9 @@
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\bin\Release\netcoreapp3.1\Cassandra.NetCore.ORM.deps.json
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\bin\Release\netcoreapp3.1\Cassandra.NetCore.ORM.dll
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\bin\Release\netcoreapp3.1\Cassandra.NetCore.ORM.pdb
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.csprojAssemblyReference.cache
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.AssemblyInfoInputs.cache
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.AssemblyInfo.cs
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.csproj.CoreCompileInputs.cache
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.dll
+D:\Code\WorkSamples\Cassandra.NetCore\Cassandra.NetCore.ORM\obj\Release\netcoreapp3.1\Cassandra.NetCore.ORM.pdb

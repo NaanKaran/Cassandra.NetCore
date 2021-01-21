@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Karunakaran R</Authors>
+    <PackageProjectUrl>https://github.com/NaanKaran/Cassandra.NetCore.ORM</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NaanKaran/Cassandra.NetCore.ORM</RepositoryUrl>
+
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+
+    <FileVersion>1.0.0.0</FileVersion>
+
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CassandraCSharpDriver" Version="3.16.1" />
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassandra.NetCore.ORM", "Cassandra.NetCore.ORM\Cassandra.NetCore.ORM.csproj", "{324785E0-896B-471A-A4A0-629DF45AC66D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cassandra.NetCore.Test", "Cassandra.NetCore.Test\Cassandra.NetCore.Test.csproj", "{A9C975EE-645D-45CC-BFD3-935B45308AE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{324785E0-896B-471A-A4A0-629DF45AC66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324785E0-896B-471A-A4A0-629DF45AC66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324785E0-896B-471A-A4A0-629DF45AC66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324785E0-896B-471A-A4A0-629DF45AC66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C975EE-645D-45CC-BFD3-935B45308AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C975EE-645D-45CC-BFD3-935B45308AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C975EE-645D-45CC-BFD3-935B45308AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C975EE-645D-45CC-BFD3-935B45308AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15F8F3A0-6F25-4814-8979-8F1D16D53D77}
+	EndGlobalSection
+EndGlobal
