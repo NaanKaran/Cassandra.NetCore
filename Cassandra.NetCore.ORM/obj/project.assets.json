@@ -3539,7 +3539,7 @@
     "C:\\Users\\karunakaran\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "restore": {
       "projectUniqueName": "D:\\Code\\WorkSamples\\Cassandra.NetCore\\Cassandra.NetCore.ORM\\Cassandra.NetCore.ORM.csproj",
       "projectName": "Cassandra.NetCore.ORM",

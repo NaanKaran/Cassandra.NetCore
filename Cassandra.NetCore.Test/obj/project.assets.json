@@ -1850,7 +1850,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Cassandra.NetCore.ORM/1.0.2": {
+      "Cassandra.NetCore.ORM/1.0.3": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -6301,7 +6301,7 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Cassandra.NetCore.ORM/1.0.2": {
+    "Cassandra.NetCore.ORM/1.0.3": {
       "type": "project",
       "path": "../Cassandra.NetCore.ORM/Cassandra.NetCore.ORM.csproj",
       "msbuildProject": "../Cassandra.NetCore.ORM/Cassandra.NetCore.ORM.csproj"
@@ -6309,7 +6309,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Cassandra.NetCore.ORM >= 1.0.2",
+      "Cassandra.NetCore.ORM >= 1.0.3",
       "CassandraCSharpDriver >= 3.16.1",
       "MSTest.TestAdapter >= 2.1.1",
       "MSTest.TestFramework >= 2.1.1",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9wmQYDE7zYW7Y1KTDXMiYXN68DmSsNRRH2LsUIaeswq7zOythQaxV8pSbs6W6har2SRQQWhrWrug6CF+6h/buw==",
+  "dgSpecHash": "4JcyTrRfXL9yXRCzawEE5zD0Kgn26f/HtXxyx6ECdQQLQigINcpPd4s3uGdi04d4zqk9dj1GISDuissALZn5eg==",
   "success": true,
   "projectFilePath": "D:\\Code\\WorkSamples\\Cassandra.NetCore\\Cassandra.NetCore.Test\\Cassandra.NetCore.Test.csproj",
   "expectedPackageFiles": [
