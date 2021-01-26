@@ -34,11 +34,6 @@ public void ConfigureServices(IServiceCollection services)
 }
 
 
-
-using (dataContext = new CassandraDataContext(new[] { "127.0.0.1" }, "demo"))
-{
-}
-
 ```
 
 ### Linking the entity model
