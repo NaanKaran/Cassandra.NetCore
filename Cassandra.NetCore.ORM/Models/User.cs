@@ -8,6 +8,11 @@ namespace Cassandra.NetCore.ORM.Models
     [CassandraTable("user")]
     public class User
     {
+        public User()
+        {
+            
+        }
+        [PrimaryKey]
         public int user_id { get; set; }
         public string user_name { get; set; }
         public string user_bcity { get; set; }

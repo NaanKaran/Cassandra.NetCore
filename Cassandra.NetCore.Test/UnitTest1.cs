@@ -16,6 +16,7 @@ namespace Cassandra.NetCore.Test
         private const string CASSANDRACONTACTPOINT = "localhost";
         private static readonly int CASSANDRAPORT = 10350;
 
+
         public ICassandraDbContext _dbContext;
         public UnitTest1()
         {
@@ -25,8 +26,9 @@ namespace Cassandra.NetCore.Test
 
 
         [TestMethod]
-        private void TestData()
+        public async Task TestData()
         {
+            await _dbContext.CreateClusterAsync<User>();
             // Inserting Data into user table
             _dbContext.InsertIfNotExists<User>(new User(1, "LyubovK", "Dubai"));
             _dbContext.InsertIfNotExists<User>(new User(2, "JiriK", "Toronto"));

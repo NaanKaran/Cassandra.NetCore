@@ -27,7 +27,6 @@ namespace Cassandra.NetCore.ORM
         T SingleOrDefault<T>(Expression<Func<T, bool>> predicate);
         void AddOrUpdate<T>(T entity);
         Task AddOrUpdateAsync<T>(T entity);
-
         Task CreateClusterAsync<T>() where T : class, new();
     }
 }

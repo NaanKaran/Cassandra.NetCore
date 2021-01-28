@@ -10,7 +10,7 @@ namespace Cassandra.NetCore.ORM.Helpers
     {
         public static Query EvaluateQuery<T>(Expression<Func<T, bool>> predicate)
         {
-            var expression = predicate.Body as BinaryExpression;
+            var expression = predicate?.Body as BinaryExpression;
             if (expression != null)
             {
                 var q = EvaluateBinaryExpression(expression);
@@ -22,7 +22,7 @@ namespace Cassandra.NetCore.ORM.Helpers
 
         public static string EvaluatePropertyName<T, TAverageModel>(Expression<Func<T, TAverageModel>> predicate)
         {
-            var expression = predicate.Body as MemberExpression;
+            var expression = predicate?.Body as MemberExpression;
             return ExtractMemberNameFromExpression(expression);
         }
 
