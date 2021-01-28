@@ -1,12 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=43a94674_002D8455_002D47b1_002Dad72_002Dc1e0c7015a00/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestMethod1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Insert_Test&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_Test&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.AddOrUpdate_Test&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_Test_With_Filter&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Update_Test&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.CreateCluster&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.CreateCluster&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.TestData&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_With_Filter&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_Test&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6a532792_002D8125_002D4888_002D840a_002Da2f109500007/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Select_Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
