@@ -28,5 +28,13 @@ namespace Cassandra.NetCore.ORM
         void AddOrUpdate<T>(T entity);
         Task AddOrUpdateAsync<T>(T entity);
         Task CreateClusterAsync<T>() where T : class, new();
+
+        /// <summary>
+        /// Create Index for already created cluster(Table)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        Task CreateIndexAsync<T>(string columnName) where T : class;
     }
 }

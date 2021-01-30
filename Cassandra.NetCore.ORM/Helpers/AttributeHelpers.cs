@@ -49,6 +49,67 @@ namespace Cassandra.NetCore.ORM.Helpers
             return property.Name + " " + GetOperand(property.PropertyType);
         }
 
+        public static (string,int) GetPrimaryKeyColumnsMapping(this PropertyInfo property)
+        {
+            var cassandraPropertyAttribute = property.GetCustomAttribute<CassandraPropertyAttribute>();
+            var primaryKey = property.GetCustomAttribute<PrimaryKey>();
+            
+
+            if (cassandraPropertyAttribute != null && primaryKey != null)
+                return (cassandraPropertyAttribute.AttributeName, primaryKey.Order);
+           
+            if (primaryKey != null)
+            {
+                return (property.Name,primaryKey.Order);
+            }
+
+            return (null,0);
+        }
+
+
+        public static (string, int) GetClusterKeyColumnsMapping(this PropertyInfo property)
+        {
+            var cassandraPropertyAttribute = property.GetCustomAttribute<CassandraPropertyAttribute>();
+            var clusterKey = property.GetCustomAttribute<ClusterKey>();
+
+
+            if (cassandraPropertyAttribute != null && clusterKey != null)
+                return (cassandraPropertyAttribute.AttributeName, clusterKey.Order);
+
+            if (clusterKey != null)
+            {
+                return (property.Name, clusterKey.Order);
+            }
+
+            return (null, 0);
+        }
+
+        public static (string, int) GetIndexKeyColumnsMapping(this PropertyInfo property)
+        {
+            var cassandraPropertyAttribute = property.GetCustomAttribute<CassandraPropertyAttribute>();
+            var indexKey = property.GetCustomAttribute<IndexKey>();
+
+
+            if (cassandraPropertyAttribute != null && indexKey != null)
+                return (cassandraPropertyAttribute.AttributeName, indexKey.Order);
+
+            if (indexKey != null)
+            {
+                return (property.Name, indexKey.Order);
+            }
+
+            return (null, 0);
+        }
+
+        public static string GetColumnNameAndTypeMapping(this PropertyInfo property)
+        {
+            var cassandraPropertyAttribute = property.GetCustomAttribute<CassandraPropertyAttribute>();
+            if (cassandraPropertyAttribute != null)
+                return cassandraPropertyAttribute.AttributeName + " " + GetOperand(property.PropertyType);
+
+            return property.Name + " " + GetOperand(property.PropertyType);
+        }
+
         private static string GetOperand(Type nodeType)
         {
 
@@ -65,6 +126,9 @@ namespace Cassandra.NetCore.ORM.Helpers
                     return "int";
                 case TypeCode.String:
                     return "text";
+                case TypeCode.DateTime:
+                    return "timestamp";
+
                 default:
                     throw new NotSupportedException($"Node type {nodeType} is a valid operand");
             }

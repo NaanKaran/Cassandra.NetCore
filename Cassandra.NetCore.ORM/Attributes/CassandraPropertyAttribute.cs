@@ -22,11 +22,39 @@ namespace Cassandra.NetCore.ORM.Attributes
         {
         }
 
-        public PrimaryKey(string attributeName)
+        public PrimaryKey(int order)
         {
-            AttributeName = attributeName;
+            Order = order;
         }
 
-        public string AttributeName { get; }
+        public int Order { get; }
+    }
+
+    public class ClusterKey : Attribute
+    {
+        public ClusterKey()
+        {
+        }
+
+        public ClusterKey(int order)
+        {
+            Order = order;
+        }
+
+        public int Order { get; }
+    }
+
+    public class IndexKey : Attribute
+    {
+        public IndexKey()
+        {
+        }
+
+        public IndexKey(int order)
+        {
+            Order = order;
+        }
+
+        public int Order { get; }
     }
 }

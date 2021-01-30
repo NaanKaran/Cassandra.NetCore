@@ -13,4 +13,17 @@ namespace Cassandra.NetCore.ORM.Exceptions
         { 
         }
     }
+
+
+    public class MissingPrimaryKeyAttributeException : Exception
+    {
+        public MissingPrimaryKeyAttributeException()
+        {
+        }
+
+        public MissingPrimaryKeyAttributeException(Type classType)
+            : base($"Missing PrimaryKey attribute for class {classType}")
+        {
+        }
+    }
 }

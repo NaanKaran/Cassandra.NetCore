@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Survey.VotersDetails.API/Properties/ServiceDependencies/prod-omi-votersdetails-api - Web Deploy
+/Survey.VotersSurvey.API/Properties/ServiceDependencies/stage-onemindia-votersurvey-api - Web Deploy
+/Survey.VotersSurvey.EventGridFunc/Properties

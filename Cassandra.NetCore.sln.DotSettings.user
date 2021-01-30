@@ -5,6 +5,8 @@
     &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.TestData&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_With_Filter&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.CreateClusterWithTwoPrimaryKey&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_With_Filter_PrimaryKey&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6a532792_002D8125_002D4888_002D840a_002Da2f109500007/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Select_Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -15,5 +17,10 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da205d02_002Df0e3_002D487d_002Da254_002Db547b26d3267/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateCluster" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::69F448F1-2694-49B2-A414-E5DADA934C89::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.CreateCluster&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=de31c72e_002Deb60_002D47de_002Daf6f_002D0b983b98a27b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Select_With_Filter_PrimaryKey" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::A9C975EE-645D-45CC-BFD3-935B45308AE4::.NETCoreApp,Version=v3.1::Cassandra.NetCore.Test.UnitTest1.Select_With_Filter_PrimaryKey&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

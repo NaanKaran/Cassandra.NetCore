@@ -16,11 +16,19 @@ namespace Cassandra.NetCore.Test
         private const string CASSANDRACONTACTPOINT = "localhost";
         private static readonly int CASSANDRAPORT = 10350;
 
+        private static readonly string keySpec = "uprofile";
+
+
+        //private const string USERNAME = "stage-omi-votersurvey-candra-comosdb";
+        //private const string PASSWORD = "Dq4pUmXAtTLusPkLgLGK1sl3AZnsObuGYd14UlwdvqjiiXsx3s8mGhallqd1h3lvofNLgLcebWsAzQBLvcoasg==";
+        //private const string CASSANDRACONTACTPOINT = "stage-omi-votersurvey-candra-comosdb.cassandra.cosmos.azure.com";
+        //private static readonly int CASSANDRAPORT = 10350;
+        //private static readonly string keySpec = "uprofile";
 
         public ICassandraDbContext _dbContext;
         public UnitTest1()
         {
-            _dbContext = new CassandraDbContext(USERNAME,PASSWORD,CASSANDRACONTACTPOINT,CASSANDRAPORT, "uprofile");
+            _dbContext = new CassandraDbContext(USERNAME,PASSWORD,CASSANDRACONTACTPOINT,CASSANDRAPORT, keySpec);
             //TestData();
         }
 
@@ -88,21 +96,21 @@ namespace Cassandra.NetCore.Test
 
 
         [TestMethod]
-        public void CreateCluster()
+        public async Task CreateCluster()
         {
             try
             {
               
-                var uu = _dbContext.CreateClusterAsync<Survey>();
+                await _dbContext.CreateClusterAsync<Survey>();
 
                 var cc = _dbContext.InsertIfNotExistsAsync(new Survey()
                 {
-                    Id = 1,
+                    Id = 2,
                     City = "Chennai",
                     UserName = "karuna"
                 });
 
-                Assert.IsNotNull(uu);
+                Assert.IsNotNull(cc);
             }
             catch (Exception e)
             {
@@ -112,7 +120,41 @@ namespace Cassandra.NetCore.Test
          
         }
 
+        [TestMethod]
+        public async Task CreateClusterWithTwoPrimaryKey()
+        {
+            try
+            {
 
+                await _dbContext.CreateClusterAsync<Student>();
+
+                await _dbContext.InsertIfNotExistsAsync(new Student()
+                {
+                    Id = 2,
+                    Standard = "SSLC",
+                    Section = "A",
+                    CreatedOn = DateTime.Now
+                });
+
+                Assert.IsNotNull(true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
+
+        [TestMethod]
+        public async Task Select_With_Filter_IndexKey()
+        {
+            var users = await _dbContext.SelectAsync<Student>(c=>c.Standard == "SSLC");
+
+            var fistUser = users.ToList();
+
+            Assert.AreEqual("SSLC", fistUser.First().Standard);
+        }
 
     }
 }

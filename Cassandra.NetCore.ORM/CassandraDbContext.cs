@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Security;
@@ -7,6 +8,7 @@ using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Cassandra.Mapping;
+using Cassandra.NetCore.ORM.Exceptions;
 using Cassandra.NetCore.ORM.Helpers;
 using Mapper = Cassandra.Mapping.Mapper;
 
@@ -40,9 +42,9 @@ namespace Cassandra.NetCore.ORM
                 .Build();
             CreateKeySpace(keySpaceName).Wait();
             _session = _cluster.ConnectAsync(keySpaceName).Result;
-             _mapper = new Mapper(_session);
+            _mapper = new Mapper(_session);
 
-             _keySpaceName = keySpaceName;
+            _keySpaceName = keySpaceName;
         }
         public static bool ValidateServerCertificate
         (
@@ -80,8 +82,7 @@ namespace Cassandra.NetCore.ORM
         {
             try
             {
-
-                 _mapper.Insert<T>(data);
+                _mapper.Insert<T>(data);
             }
             catch (Exception e)
             {
@@ -94,7 +95,7 @@ namespace Cassandra.NetCore.ORM
         {
             try
             {
-            
+
                 await _mapper.InsertAsync<T>(data);
             }
             catch (Exception e)
@@ -495,16 +496,30 @@ namespace Cassandra.NetCore.ORM
 
                 // We are interested only in the properties we are not ignoring
                 var properties = entity.GetType().GetCassandraRelevantProperties();
-                var propertiesNames = properties.Select(p => p.GetColumnNameAndPrimaryKeyMapping()).ToArray();
 
-                var createCql = $"CREATE TABLE IF NOT EXISTS {_keySpaceName}.{tableName} ({string.Join(",", propertiesNames)})";
+                var propertiesNames = properties.Select(p => p.GetColumnNameAndTypeMapping()).ToArray();
+
+                var primaryKeys = properties.Select(c => c.GetPrimaryKeyColumnsMapping()).Where(m => m.Item1 != null).OrderBy(c => c.Item2).Select(m => m.Item1).ToArray();
+
+                if (!primaryKeys.Any())
+                {
+                    throw new MissingPrimaryKeyAttributeException();
+                }
+
+                var clusteringKeys = properties.Select(c => c.GetClusterKeyColumnsMapping()).Where(m => m.Item1 != null).OrderBy(c => c.Item2).Select(m => m.Item1).ToArray();
 
 
-                var insertStatment = new SimpleStatement(createCql);
+                var clusters = clusteringKeys.Any() ? ("," + string.Join(",", clusteringKeys)) : "";
 
-                return insertStatment;
 
-               
+                var createCql = $"CREATE TABLE IF NOT EXISTS {_keySpaceName}.{tableName} ({string.Join(",", propertiesNames)}, PRIMARY KEY( ({string.Join(",", primaryKeys)}) {clusters} ) );";
+
+
+                var insertStatement = new SimpleStatement(createCql);
+
+                return insertStatement;
+
+
 
             }
             catch (Exception e)
@@ -515,20 +530,68 @@ namespace Cassandra.NetCore.ORM
 
         }
 
-        public async Task CreateClusterAsync<T>() where T : class, new() 
+
+        private  async Task CreateIndexAsync<T>(T entity) where T:class
         {
             try
             {
-                var query = CreateClusterStatement(new T());
-                await _session.ExecuteAsync(query);
+                
+                // We are interested only in the properties we are not ignoring
+                var properties = entity.GetType().GetCassandraRelevantProperties();
+
+                var indexKeys = properties.Select(c => c.GetIndexKeyColumnsMapping()).Where(m => m.Item1 != null).OrderBy(c => c.Item2).Select(m => m.Item1).ToArray();
+
+                foreach (var indexKeyName in indexKeys)
+                {
+                   await CreateIndexAsync<T>(indexKeyName);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-          
-            
+
+        }
+
+        public async Task CreateIndexAsync<T>(string columnName) where T:class 
+        {
+            try
+            {
+
+                var tableName = typeof(T).ExtractTableName<T>();
+
+                var indexColumn = $"CREATE INDEX ON {_keySpaceName}.{tableName}({columnName});";
+
+                var insertStatement = new SimpleStatement(indexColumn);
+                await _session.ExecuteAsync(insertStatement); 
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+
+        public async Task CreateClusterAsync<T>() where T : class, new()
+        {
+            try
+            {
+                var query = CreateClusterStatement(new T());
+                await _session.ExecuteAsync(query);
+
+                await CreateIndexAsync<T>(new T());
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+
         }
     }
 }
