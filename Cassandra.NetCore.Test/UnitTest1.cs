@@ -19,11 +19,7 @@ namespace Cassandra.NetCore.Test
         private static readonly string keySpec = "uprofile";
 
 
-        //private const string USERNAME = "stage-omi-votersurvey-candra-comosdb";
-        //private const string PASSWORD = "Dq4pUmXAtTLusPkLgLGK1sl3AZnsObuGYd14UlwdvqjiiXsx3s8mGhallqd1h3lvofNLgLcebWsAzQBLvcoasg==";
-        //private const string CASSANDRACONTACTPOINT = "stage-omi-votersurvey-candra-comosdb.cassandra.cosmos.azure.com";
-        //private static readonly int CASSANDRAPORT = 10350;
-        //private static readonly string keySpec = "uprofile";
+ 
 
         public ICassandraDbContext _dbContext;
         public UnitTest1()
