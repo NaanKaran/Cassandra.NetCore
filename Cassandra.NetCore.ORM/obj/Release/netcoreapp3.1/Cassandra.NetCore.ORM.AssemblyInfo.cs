@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Karunakaran R")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cassandra.NetCore.ORM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cassandra.NetCore.ORM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

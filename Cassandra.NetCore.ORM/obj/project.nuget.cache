@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5WjlEpzd2UX8AaMKnZyoV+tnanPB625O3/8bds1oQmmUwheBPtMnAPiTeQv62ij73aAoTb9cu2qUroY6js7Jjg==",
+  "dgSpecHash": "EQXPu5KoCrmT5t00SH/sawBfTLmgv87V4ZtWs3Bu9LNqOshwJCozOk5Be4EFFeYS3BBVqfnTLJX2l7Jq7jXl9g==",
   "success": true,
   "projectFilePath": "D:\\Code\\WorkSamples\\Cassandra.NetCore\\Cassandra.NetCore.ORM\\Cassandra.NetCore.ORM.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\karunakaran\\.nuget\\packages\\cassandracsharpdriver\\3.16.1\\cassandracsharpdriver.3.16.1.nupkg.sha512",
+    "C:\\Users\\karunakaran\\.nuget\\packages\\cassandracsharpdriver\\3.16.2\\cassandracsharpdriver.3.16.2.nupkg.sha512",
     "C:\\Users\\karunakaran\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\karunakaran\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\karunakaran\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\1.0.0\\microsoft.extensions.dependencyinjection.abstractions.1.0.0.nupkg.sha512",

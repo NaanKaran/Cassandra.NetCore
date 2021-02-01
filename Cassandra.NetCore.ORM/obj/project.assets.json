@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "CassandraCSharpDriver/3.16.1": {
+      "CassandraCSharpDriver/3.16.2": {
         "type": "package",
         "dependencies": {
           "K4os.Compression.LZ4": "1.1.11",
@@ -832,14 +832,15 @@
     }
   },
   "libraries": {
-    "CassandraCSharpDriver/3.16.1": {
-      "sha512": "mAwWfa1H5lWmKtPtTz6T/n47ur3zZFcISLFOyD0g6D69ucmimeh+uSxEm7nZI7AY7XF7DGzZsJkb27b1vdGl9g==",
+    "CassandraCSharpDriver/3.16.2": {
+      "sha512": "nunwfI97mfpSYhXNgm1vkwGUtAuEnwGEB6ulZhT+el7Z2Q00y2qb4sJXdqHjpAJuWWOgBB0ApXqEcp/CNhN0IA==",
       "type": "package",
-      "path": "cassandracsharpdriver/3.16.1",
+      "path": "cassandracsharpdriver/3.16.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "cassandracsharpdriver.3.16.1.nupkg.sha512",
+        "LICENSE.md",
+        "cassandracsharpdriver.3.16.2.nupkg.sha512",
         "cassandracsharpdriver.nuspec",
         "lib/net452/Cassandra.dll",
         "lib/net452/Cassandra.xml",
@@ -3532,14 +3533,14 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CassandraCSharpDriver >= 3.16.1"
+      "CassandraCSharpDriver >= 3.16.2"
     ]
   },
   "packageFolders": {
     "C:\\Users\\karunakaran\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.3",
+    "version": "1.0.6",
     "restore": {
       "projectUniqueName": "D:\\Code\\WorkSamples\\Cassandra.NetCore\\Cassandra.NetCore.ORM\\Cassandra.NetCore.ORM.csproj",
       "projectName": "Cassandra.NetCore.ORM",
@@ -3577,7 +3578,7 @@
         "dependencies": {
           "CassandraCSharpDriver": {
             "target": "Package",
-            "version": "[3.16.1, )"
+            "version": "[3.16.2, )"
           }
         },
         "imports": [

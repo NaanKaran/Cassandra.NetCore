@@ -561,7 +561,7 @@ namespace Cassandra.NetCore.ORM
 
                 var tableName = typeof(T).ExtractTableName<T>();
 
-                var indexColumn = $"CREATE INDEX ON {_keySpaceName}.{tableName}({columnName});";
+                var indexColumn = $"CREATE INDEX IF NOT EXISTS ON {_keySpaceName}.{tableName}({columnName});";
 
                 var insertStatement = new SimpleStatement(indexColumn);
                 await _session.ExecuteAsync(insertStatement); 

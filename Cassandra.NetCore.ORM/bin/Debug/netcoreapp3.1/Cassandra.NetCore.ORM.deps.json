@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Cassandra.NetCore.ORM/1.0.0": {
+      "Cassandra.NetCore.ORM/1.0.5": {
         "dependencies": {
           "CassandraCSharpDriver": "3.16.1"
         },
@@ -540,7 +540,7 @@
     }
   },
   "libraries": {
-    "Cassandra.NetCore.ORM/1.0.0": {
+    "Cassandra.NetCore.ORM/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

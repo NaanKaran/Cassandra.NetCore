@@ -14,11 +14,11 @@
 
     <FileVersion>1.0.0.0</FileVersion>
 
-    <Version>1.0.3</Version>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CassandraCSharpDriver" Version="3.16.1" />
+    <PackageReference Include="CassandraCSharpDriver" Version="3.16.2" />
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
   </ItemGroup>
 
