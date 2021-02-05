@@ -5,12 +5,11 @@ using Cassandra.NetCore.ORM.Attributes;
 
 namespace Cassandra.NetCore.ORM.Models
 {
-    [CassandraTable("survey")]
-    public class Survey
+    [CassandraTable("NestedChildTable")]
+    public class TestChildTable
     {
         [PrimaryKey]
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string City { get; set; }
+        public string Name { get; set; }
     }
 }

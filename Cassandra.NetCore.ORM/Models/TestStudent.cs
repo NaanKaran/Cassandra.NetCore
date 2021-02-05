@@ -6,7 +6,7 @@ using Cassandra.NetCore.ORM.Attributes;
 namespace Cassandra.NetCore.ORM.Models
 {
     [CassandraTable("Student")]
-    public class Student
+    public class TestStudent
     {
         [PrimaryKey(1)]
         public int  Id { get; set; }

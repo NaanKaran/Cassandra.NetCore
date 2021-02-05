@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -43,10 +44,10 @@ namespace Cassandra.NetCore.ORM.Helpers
             var cassandraPropertyAttribute = property.GetCustomAttribute<PrimaryKey>();
             if (cassandraPropertyAttribute != null)
             {
-                return property.Name + " " + GetOperand(property.PropertyType) + " PRIMARY KEY";
+                return property.Name + " " + GetOperand(property) + " PRIMARY KEY";
             }
 
-            return property.Name + " " + GetOperand(property.PropertyType);
+            return property.Name + " " + GetOperand(property);
         }
 
         public static (string,int) GetPrimaryKeyColumnsMapping(this PropertyInfo property)
@@ -105,15 +106,15 @@ namespace Cassandra.NetCore.ORM.Helpers
         {
             var cassandraPropertyAttribute = property.GetCustomAttribute<CassandraPropertyAttribute>();
             if (cassandraPropertyAttribute != null)
-                return cassandraPropertyAttribute.AttributeName + " " + GetOperand(property.PropertyType);
+                return cassandraPropertyAttribute.AttributeName + " " + GetOperand(property);
 
-            return property.Name + " " + GetOperand(property.PropertyType);
+            return property.Name + " " + GetOperand(property);
         }
 
-        private static string GetOperand(Type nodeType)
+        private static string GetOperand(PropertyInfo propertyInfo)
         {
 
-            var typeCode = Type.GetTypeCode(nodeType);
+            var typeCode = Type.GetTypeCode(propertyInfo.PropertyType);
             switch (typeCode)
             {
                
@@ -128,10 +129,33 @@ namespace Cassandra.NetCore.ORM.Helpers
                     return "text";
                 case TypeCode.DateTime:
                     return "timestamp";
-
+                case TypeCode.Object:
+                    return GetObjectType(propertyInfo);
                 default:
-                    throw new NotSupportedException($"Node type {nodeType} is a valid operand");
+                    throw new NotSupportedException($"Node type {propertyInfo.PropertyType} is a valid operand");
             }
         }
+
+        private static string GetObjectType(PropertyInfo propertyInfo)
+        {
+            var isEnumerable = propertyInfo.PropertyType.IsSubclassOf(typeof(IEnumerable));
+
+
+
+            if (propertyInfo.PropertyType.IsClass)
+            {
+                var tt = propertyInfo.PropertyType;
+            }
+
+            if (isEnumerable)
+            {
+
+                return $"list<FROZEN<{propertyInfo.PropertyType.Name}>>";
+            }
+
+            return $"FROZEN<{propertyInfo.PropertyType.Name}>";
+        }
+
+
     }
 }

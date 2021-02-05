@@ -6,9 +6,9 @@ using Cassandra.NetCore.ORM.Attributes;
 namespace Cassandra.NetCore.ORM.Models
 {
     [CassandraTable("user")]
-    public class User
+    public class TestUser
     {
-        public User()
+        public TestUser()
         {
             
         }
@@ -17,7 +17,7 @@ namespace Cassandra.NetCore.ORM.Models
         public string user_name { get; set; }
         public string user_bcity { get; set; }
 
-        public User(int user_id, string user_name, string user_bcity)
+        public TestUser(int user_id, string user_name, string user_bcity)
         {
             this.user_id = user_id;
             this.user_name = user_name;
