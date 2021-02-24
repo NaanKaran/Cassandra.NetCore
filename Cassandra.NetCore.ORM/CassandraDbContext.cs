@@ -488,7 +488,7 @@ namespace Cassandra.NetCore.ORM
             return insertStatment;
         }
 
-        private SimpleStatement CreateClusterStatement<T>(T entity)
+        private async Task  CreateClusterStatement<T>(T entity)
         {
             try
             {
@@ -517,7 +517,10 @@ namespace Cassandra.NetCore.ORM
 
                 var insertStatement = new SimpleStatement(createCql);
 
-                return insertStatement;
+
+                await _session.ExecuteAsync(insertStatement);
+
+                await AlterTableAsync(propertiesNames, tableName);
 
 
 
@@ -529,6 +532,28 @@ namespace Cassandra.NetCore.ORM
             }
 
         }
+
+
+        private async Task AlterTableAsync(string[] propertyNames, string tableName)
+        {
+            foreach (var prop in propertyNames)
+            {
+                try
+                {
+                    var columnAdd = $"ALTER TABLE {_keySpaceName}.{tableName} ADD {prop}; ";
+
+                    var insertStatement = new SimpleStatement(columnAdd);
+
+                    await _session.ExecuteAsync(insertStatement);
+                }
+                catch (Exception e)
+                {
+                }
+
+            }
+
+            
+        } 
 
 
         private  async Task CreateIndexAsync<T>(T entity) where T:class
@@ -580,7 +605,7 @@ namespace Cassandra.NetCore.ORM
             try
             {
                 var query = CreateClusterStatement(new T());
-                await _session.ExecuteAsync(query);
+               
 
                 await CreateIndexAsync<T>(new T());
 
